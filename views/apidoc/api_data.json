@@ -1,0 +1,59 @@
+[
+  {
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "varname1",
+            "description": "<p>No type.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "varname2",
+            "description": "<p>With type.</p>"
+          }
+        ]
+      }
+    },
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "./views/apidoc/main.js",
+    "group": "D___Code_ncu_app_apidemo_views_apidoc_main_js",
+    "groupTitle": "D___Code_ncu_app_apidemo_views_apidoc_main_js",
+    "name": ""
+  },
+  {
+    "type": "GET",
+    "url": "/docs",
+    "title": "getDocs",
+    "description": "<p>取得APIDoc生成的Documentation</p>",
+    "name": "getDocs",
+    "group": "docs",
+    "version": "0.1.0",
+    "sampleRequest": [
+      {
+        "url": "/docs"
+      }
+    ],
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "type": "html",
+            "optional": false,
+            "field": "index",
+            "description": "<p>index page</p>"
+          }
+        ]
+      }
+    },
+    "filename": "./app.js",
+    "groupTitle": "docs"
+  }
+]
