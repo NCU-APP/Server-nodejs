@@ -13,7 +13,7 @@ let app = express();
  * @apiSuccess (200) {html} index index page
  */
 app.use('/docs', express.static('./views/apidoc'));
-
+/**/
 
 let server = app.listen(80, () => {
   console.log("Port: 80");
