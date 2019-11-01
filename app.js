@@ -2,6 +2,8 @@ let express = require('express');
 
 let app = express();
 
+require('dotenv').config();
+
 /**
  * 取得Documentation
  * @api {GET} /docs getDocs
@@ -15,6 +17,6 @@ let app = express();
 app.use('/docs', express.static('./views/apidoc'));
 /**/
 
-let server = app.listen(80, () => {
-  console.log("Port: 80");
+let server = app.listen(process.env.PORT, () => {
+  console.log(`Port: ${process.env.PORT}`);
 })
