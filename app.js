@@ -15,7 +15,6 @@ require('dotenv').config();
  * @apiSuccess (200) {html} index index page
  */
 app.use('/docs', express.static('./views/apidoc'));
-/**/
 
 let server = app.listen(process.env.PORT, () => {
   console.log(`Port: ${process.env.PORT}`);
