@@ -8,5 +8,6 @@ let router = express.Router();
 router.use('/', user);
 router.use('/board', board);
 router.use('/oauth2', oauth2);
+router.use('/Artical', artical)
 
 module.exports = router;
