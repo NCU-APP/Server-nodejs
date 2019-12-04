@@ -1,7 +1,7 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcryptjs');
 
-module.exports =  class User extends Model {
+module.exports = class User extends Model {
   static async addUser(user) {
     let { name, email, password } = user;
     let salt = await bcrypt.genSalt();
@@ -31,7 +31,15 @@ module.exports =  class User extends Model {
       },
       name: DataTypes.STRING,
       email: DataTypes.STRING,
-      password: DataTypes.STRING
+      password: DataTypes.STRING,
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      }
     }, { sequelize });
   }
 

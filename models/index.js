@@ -1,26 +1,31 @@
+'use strict';
+
 const fs = require('fs');
 const path = require('path');
-const { Sequelize, DataTypes } = require('sequelize');
+const Sequelize = require('sequelize');
+const basename = path.basename(__filename);
+const config = require('./../configs/database.js');
+const db = {};
 
-let sequelize = new Sequelize({
-  database: 'NCU_APP',
-  username: 'ncuapp',
-  password: 'ncuapp',
-  dialect: 'mysql',
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT
-});
+let sequelize = new Sequelize(config.database, config.username, config.password, config);
 
-let models = {};
-
-fs.readdirSync(__dirname)
-  .filter(file => (file.indexOf('.') !== 0) && (file !== path.basename(__filename)) && (file.slice(-3) === '.js'))
+fs
+  .readdirSync(__dirname)
+  .filter(file => {
+    return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
+  })
   .forEach(file => {
-    let model =  require(path.join(__dirname, file)).init(sequelize);
-    models[model.name] = model;
+    const model = require(path.join(__dirname, file)).init(sequelize);
+    db[model.name] = model;
   });
 
-Object.values(models).filter(model => typeof model.associate === 'function')
-  .forEach(model => model.associate(models));
+Object.keys(db).forEach(modelName => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
+  }
+});
 
-module.exports = {...models, sequelize, Sequelize,};
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+module.exports = db;
