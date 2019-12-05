@@ -30,8 +30,6 @@ module.exports = class User extends Model {
         defaultValue: DataTypes.UUIDV1
       },
       name: DataTypes.STRING,
-      email: DataTypes.STRING,
-      password: DataTypes.STRING,
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
