@@ -45,7 +45,7 @@ router.get('/listings', async (res, req) => {
     }
   }
 
-  let latestVersion = await Version.max('version', { where: { table_name: 'boards' } });
+  let latestVersion = await Version.max('version', { where: { table_name: 'Boards' } });
 
   if(latestVersion > Number.parseInt(version)) {
     let allBoard = await Board.findAll();
