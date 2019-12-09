@@ -63,4 +63,14 @@ router.get('/listings', async (res, req) => {
   req.send(result).end();
 });
 
+router.get('/', (req, res) => {
+  res.send(['八卦', '資工']);
+  res.end();
+});
+
+router.post('/', (req, res) => {
+  res.send(req.body);
+  res.end();
+});
+
 module.exports = router;
