@@ -24,7 +24,7 @@ module.exports = class Board extends Model {
     }, { sequelize });
   }
 
-  static associations(models) {
+  static associate(models) {
 
   }
 };

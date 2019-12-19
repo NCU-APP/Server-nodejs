@@ -27,7 +27,7 @@ module.exports = class PreferBoard extends Model {
     }, { sequelize });
   }
 
-  static associations(models) {
+  static associate(models) {
 
   }
 };

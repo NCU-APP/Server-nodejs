@@ -1,19 +1,27 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Versions', {
+    return queryInterface.createTable('BusStops', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.BIGINT
+        type: Sequelize.INTEGER
       },
-      version: {
-        type: Sequelize.BIGINT
+      uid: {
+        type: Sequelize.STRING
       },
-      name: {
-        type: Sequelize.ENUM,
-        values: [ 'Board', 'BusRoute' ]
+      zh_tw_name: {
+        type: Sequelize.STRING
+      },
+      en_name: {
+        type: Sequelize.STRING
+      },
+      latitude: {
+        type: Sequelize.DOUBLE
+      },
+      longitude: {
+        type: Sequelize.DOUBLE
       },
       createdAt: {
         allowNull: false,
@@ -26,6 +34,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Versions');
+    return queryInterface.dropTable('BusStops');
   }
 };

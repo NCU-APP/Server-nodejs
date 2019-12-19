@@ -1,0 +1,304 @@
+[{
+  "RouteUID": "UST0001",
+  "RouteName": {
+    "Zh_tw": "臺聯大",
+    "En": "UST"
+  },
+  "Direction": 0,
+  "Stops": [
+    {
+      "StopUID": "NCU0001",
+      "StopName": {
+        "Zh_tw": "中央大學行政大樓前",
+        "En": "NCU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 1,
+      "StopPosition": { "PositionLat": 24.968249, "PositionLon": 121.195337 }
+    },
+    {
+      "StopUID": "NTCU0001",
+      "StopName": {
+        "Zh_tw": "交通大學中正堂前",
+        "En": "NTCU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 2,
+      "StopPosition": { "PositionLat": 24.788408, "PositionLon": 120.998618 }
+    },
+    {
+      "StopUID": "NTHU0001",
+      "StopName": {
+        "Zh_tw": "清華大學化學館前",
+        "En": "NTHU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 3,
+      "StopPosition": { "PositionLat": 24.796313, "PositionLon": 120.994940 }
+    }, {
+      "StopUID": "NCU0001",
+      "StopName": {
+        "Zh_tw": "中央大學行政大樓前",
+        "En": "NCU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 4,
+      "StopPosition": { "PositionLat": 24.968249, "PositionLon": 121.195337 }
+    },
+    {
+      "StopUID": "NYMU0001",
+      "StopName": {
+        "Zh_tw": "陽明大學校門口",
+        "En": "NYMU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 5,
+      "StopPosition": { "PositionLat": 25.119710, "PositionLon": 121.513271 }
+    }
+  ],
+  "UpdateTime": "2019-12-18T20:13:01+08:00",
+  "VersionID": 0
+}, {
+  "RouteUID": "UST0001",
+  "RouteName": {
+    "Zh_tw": "臺聯大",
+    "En": "UST"
+  },
+  "Direction": 1,
+  "Stops": [
+    {
+      "StopUID": "NYMU0001",
+      "StopName": {
+        "Zh_tw": "陽明大學校門口",
+        "En": "NYMU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 1,
+      "StopPosition": { "PositionLat": 25.119710, "PositionLon": 121.513271 }
+    },
+    {
+      "StopUID": "NCU0001",
+      "StopName": {
+        "Zh_tw": "中央大學行政大樓前",
+        "En": "NCU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 2,
+      "StopPosition": { "PositionLat": 24.968249, "PositionLon": 121.195337 }
+    },
+    {
+      "StopUID": "NTHU0001",
+      "StopName": {
+        "Zh_tw": "清華大學化學館前",
+        "En": "NTHU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 3,
+      "StopPosition": { "PositionLat": 24.796313, "PositionLon": 120.994940 }
+    },
+    {
+      "StopUID": "NTCU0001",
+      "StopName": {
+        "Zh_tw": "交通大學中正堂前",
+        "En": "NTCU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 4,
+      "StopPosition": { "PositionLat": 24.788408, "PositionLon": 120.998618 }
+    },
+    {
+      "StopUID": "NCU0001",
+      "StopName": {
+        "Zh_tw": "中央大學行政大樓前",
+        "En": "NCU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 5,
+      "StopPosition": { "PositionLat": 24.968249, "PositionLon": 121.195337 }
+    }
+  ],
+  "UpdateTime": "2019-12-18T20:13:01+08:00",
+  "VersionID": 0
+}, {
+  "RouteUID": "UST0002",
+  "RouteName": {
+    "Zh_tw": "臺聯大",
+    "En": "UST"
+  },
+  "Direction": 0,
+  "Stops": [
+    {
+      "StopUID": "NCU0001",
+      "StopName": {
+        "Zh_tw": "中央大學行政大樓前",
+        "En": "NCU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 1,
+      "StopPosition": { "PositionLat": 24.968249, "PositionLon": 121.195337 }
+    },
+    {
+      "StopUID": "NYMU0001",
+      "StopName": {
+        "Zh_tw": "陽明大學校門口",
+        "En": "NYMU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 2,
+      "StopPosition": { "PositionLat": 25.119710, "PositionLon": 121.513271 }
+    },
+    {
+      "StopUID": "NCU0001",
+      "StopName": {
+        "Zh_tw": "中央大學行政大樓前",
+        "En": "NCU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 3,
+      "StopPosition": { "PositionLat": 24.968249, "PositionLon": 121.195337 }
+    },
+    {
+      "StopUID": "NTCU0001",
+      "StopName": {
+        "Zh_tw": "交通大學中正堂前",
+        "En": "NTCU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 4,
+      "StopPosition": { "PositionLat": 24.788408, "PositionLon": 120.998618 }
+    },
+    {
+      "StopUID": "NTHU0001",
+      "StopName": {
+        "Zh_tw": "清華大學化學館前",
+        "En": "NTHU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 5,
+      "StopPosition": { "PositionLat": 24.796313, "PositionLon": 120.994940 }
+    }
+  ],
+  "UpdateTime": "2019-12-18T20:13:01+08:00",
+  "VersionID": 0
+}, {
+  "RouteUID": "UST0002",
+  "RouteName": {
+    "Zh_tw": "臺聯大",
+    "En": "UST"
+  },
+  "Direction": 1,
+  "Stops": [
+    {
+      "StopUID": "NTHU0001",
+      "StopName": {
+        "Zh_tw": "清華大學化學館前",
+        "En": "NTHU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 1,
+      "StopPosition": { "PositionLat": 24.796313, "PositionLon": 120.994940 }
+    },
+    {
+      "StopUID": "NTCU0001",
+      "StopName": {
+        "Zh_tw": "交通大學中正堂前",
+        "En": "NTCU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 2,
+      "StopPosition": { "PositionLat": 24.788408, "PositionLon": 120.998618 }
+    },
+    {
+      "StopUID": "NCU0001",
+      "StopName": {
+        "Zh_tw": "中央大學行政大樓前",
+        "En": "NCU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 3,
+      "StopPosition": { "PositionLat": 24.968249, "PositionLon": 121.195337 }
+    },
+    {
+      "StopUID": "NYMU0001",
+      "StopName": {
+        "Zh_tw": "陽明大學校門口",
+        "En": "NYMU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 4,
+      "StopPosition": { "PositionLat": 25.119710, "PositionLon": 121.513271 }
+    },
+    {
+      "StopUID": "NCU0001",
+      "StopName": {
+        "Zh_tw": "中央大學行政大樓前",
+        "En": "NCU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 3,
+      "StopPosition": { "PositionLat": 24.968249, "PositionLon": 121.195337 }
+    }
+  ],
+  "UpdateTime": "2019-12-18T20:13:01+08:00",
+  "VersionID": 0
+}, {
+  "RouteUID": "UST0003",
+  "RouteName": {
+    "Zh_tw": "臺聯大",
+    "En": "UST"
+  },
+  "Direction": 0,
+  "Stops": [
+    {
+      "StopUID": "NCU0001",
+      "StopName": {
+        "Zh_tw": "中央大學行政大樓前",
+        "En": "NCU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 1,
+      "StopPosition": { "PositionLat": 24.968249, "PositionLon": 121.195337 }
+    },
+    {
+      "StopUID": "NTCU0001",
+      "StopName": {
+        "Zh_tw": "交通大學中正堂前",
+        "En": "NTCU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 2,
+      "StopPosition": { "PositionLat": 24.788408, "PositionLon": 120.998618 }
+    },
+    {
+      "StopUID": "NTHU0001",
+      "StopName": {
+        "Zh_tw": "清華大學化學館前",
+        "En": "NTHU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 3,
+      "StopPosition": { "PositionLat": 24.796313, "PositionLon": 120.994940 }
+    }, {
+      "StopUID": "NCU0001",
+      "StopName": {
+        "Zh_tw": "中央大學行政大樓前",
+        "En": "NCU"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 4,
+      "StopPosition": { "PositionLat": 24.968249, "PositionLon": 121.195337 }
+    },
+    {
+      "StopUID": "TPE0001",
+      "StopName": {
+        "Zh_tw": "台北車站",
+        "En": "Taipei Station"
+      },
+      "StopBoarding": 0,
+      "StopSequence": 5,
+      "StopPosition": { "PositionLat": 25.047830, "PositionLon": 121.516964 }
+    }
+  ],
+  "UpdateTime": "2019-12-18T20:13:01+08:00",
+  "VersionID": 0
+}]

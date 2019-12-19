@@ -41,7 +41,7 @@ module.exports = class User extends Model {
     }, { sequelize });
   }
 
-  static associations(models) {
+  static associate(models) {
 
   }
 };

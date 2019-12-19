@@ -4,7 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const router = require('./routes');
-const { User, Board, sequelize, Sequelize } = require('./models');
+const Bus = require('./models/bus');
 
 const app = express();
 
@@ -28,9 +28,8 @@ app.use('/docs', express.static('./views/apidoc'));
 
 const StartServer = async () => {
   await app.listen(process.env.PORT);
+  await new Bus().Start();
   console.log(`http://localhost:${process.env.PORT}/`);
-  // Board.create({id: '87', name: '78'});
-  // User.addUser({ name: 'ncuapp', email: 'ncuapp', account: 'ncuapp', password: 'ncuapp' });
 };
 
 StartServer();

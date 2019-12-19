@@ -1,6 +1,7 @@
+'use strict';
 const { Sequelize, Model, DataTypes } = require('sequelize');
 
-module.exports = class Version extends Model {
+module.exports = class RouteStops extends Model {
 
   static init(sequelize) {
     return super.init({
@@ -8,14 +9,19 @@ module.exports = class Version extends Model {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.BIGINT
+        type: Sequelize.INTEGER
       },
-      version: {
-        type: Sequelize.BIGINT
+      routeid: {
+        type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.ENUM,
-        values: [ 'Board', 'BusRoute' ]
+      stopid: {
+        type: Sequelize.INTEGER
+      },
+      sequence: {
+        type: Sequelize.INTEGER
+      },
+      boarding: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

@@ -5,7 +5,7 @@ const faker = require('faker');
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return Promise.all([
-      queryInterface.bulkInsert('Versions', [{ version: 1, table_name: 'Boards', createdAt: new Date(), updatedAt: new Date() }] ),
+      queryInterface.bulkInsert('Versions', [{ version: 1, name: 'Board', createdAt: new Date(), updatedAt: new Date() }] ),
       queryInterface.bulkInsert('Boards', new Array(15).fill().map(el => ({ name: faker.commerce.product(), createdAt: new Date(), updatedAt: new Date() }) ))
     ]);
   },

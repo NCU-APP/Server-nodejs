@@ -28,6 +28,108 @@
     "name": ""
   },
   {
+    "type": "Route",
+    "url": "Route",
+    "title": "Route",
+    "group": "Types",
+    "version": "0.1.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "uid",
+            "description": "<p>UID.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "direction",
+            "description": "<p>去返程[0:'去程',1:'返程',2:'迴圈',255:'未知'].</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "array[<a href=\"#api-Types-StopsStops\">Stops</a>]",
+            "optional": false,
+            "field": "stops",
+            "description": "<p>所有經過站牌.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "name",
+            "description": "<p>路線名稱 {zh_tw: {string}, en: {string}}</p>"
+          }
+        ]
+      }
+    },
+    "filename": "./routes/api/v1/bus.js",
+    "groupTitle": "Types",
+    "name": "RouteRoute"
+  },
+  {
+    "type": "Stops",
+    "url": "Stops",
+    "title": "Stops",
+    "group": "Types",
+    "version": "0.1.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "uid",
+            "description": "<p>UID.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "latitude",
+            "description": "<p>緯度</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "longitude",
+            "description": "<p>經度</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "sequence",
+            "description": "<p>路線經過站牌之順序</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "boarding",
+            "description": "<p>上下車站別 : [-1:'可下車',0:'可上下車',1:'可上車']</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "name",
+            "description": "<p>站牌名稱 {zh_tw: {string}, en: {string}}</p>"
+          }
+        ]
+      }
+    },
+    "filename": "./routes/api/v1/bus.js",
+    "groupTitle": "Types",
+    "name": "StopsStops"
+  },
+  {
     "type": "GET",
     "url": "/api/v1/board/listings",
     "title": "Listings",
@@ -164,5 +266,76 @@
     },
     "filename": "./index.js",
     "groupTitle": "docs"
+  },
+  {
+    "type": "GET",
+    "url": "/api/v1/traffic/bus/route",
+    "title": "RouteList",
+    "description": "<p>市區公車之路線站序資料</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "version",
+            "defaultValue": "361",
+            "description": "<p>使用者的版本</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Example",
+          "content": "{\n  \"version\": 361\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "name": "RouteList",
+    "group": "traffic",
+    "version": "0.1.0",
+    "sampleRequest": [
+      {
+        "url": "/api/v1/traffic/bus/route"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "boolean",
+            "optional": false,
+            "field": "result",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "int",
+            "optional": false,
+            "field": "version",
+            "description": "<p>路線站序的版本</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "boolean",
+            "optional": false,
+            "field": "uptodate",
+            "description": "<p>是否爲最新版本</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array[<a href=\"#api-Types-RouteRoute\">Route</a>]",
+            "optional": false,
+            "field": "routes",
+            "description": "<p>各個公車的路線資料</p>"
+          }
+        ]
+      }
+    },
+    "filename": "./routes/api/v1/bus.js",
+    "groupTitle": "traffic"
   }
 ]
