@@ -13,6 +13,64 @@ module.exports = class Bus {
     await this._stopOfRoute();
   }
 
+  static async getEstimatedTime(name) {
+    let data = (await Bus._getPtx({
+        url: `https://ptx.transportdata.tw/MOTC/v2/Bus/EstimatedTimeOfArrival/City/Taoyuan/${name}`,
+        params: {
+          $top: '1000',
+          $format: 'JSON'
+        }
+      })).data, result = [];
+
+    data.forEach(route => {
+      result.push({
+        direction: route.Direction,
+        estimates: (route.Estimates ? route.Estimates : false),
+        nextTime: route.NextBusTime,
+        name: {
+          zh_tw: route.StopName.Zh_tw,
+          en: route.StopName.En
+        },
+        stopid: route.StopUID,
+        sequence: route.StopSequence,
+        status: route.StopStatus
+      });
+    });
+
+    return result;
+  }
+
+  static async getRealTime(name) {
+    let data = (await Bus._getPtx({
+        url: `https://ptx.transportdata.tw/MOTC/v2/Bus/RealTimeByFrequency/City/Taoyuan/${name}`,
+        params: {
+          $top: '1000',
+          $format: 'JSON'
+        }
+      })).data, result;
+
+    data.forEach(route => {
+      let bus = {
+        plateNumber: route.PlateNumb,
+        name: {
+          zh_tw: route.RouteName.Zh_tw,
+          en: route.RouteName.En
+        },
+        position: {
+          latitude: route.BusPosition.PositionLat,
+          longitude: route.BusPosition.PositionLon,
+        },
+        status: {
+          bus: route.BusStatus,
+          duty: route.DutyStatus
+        },
+        direction: route.direction,
+        speed: route.speed
+      };
+
+    });
+  }
+
   static async getStopOfRoute() {
     let data = await BusRoute.findAll({
       include: [{
@@ -60,7 +118,7 @@ module.exports = class Bus {
   }
 
   async _stopOfRoute() {
-    let latestVersion = (await this._getPtx({url: 'https://ptx.transportdata.tw/MOTC/v2/Bus/DataVersion/City/Taoyuan', params: { $format: 'JSON' }})).data.VersionID;
+    let latestVersion = (await Bus._getPtx({url: 'https://ptx.transportdata.tw/MOTC/v2/Bus/DataVersion/City/Taoyuan', params: { $format: 'JSON' }})).data.VersionID;
     let [ dbVersion ] = await Version.findOrCreate({
       where: { name: 'BusRoute', version: latestVersion },
       defaults: {
@@ -143,12 +201,12 @@ module.exports = class Bus {
   }
 
   async _getStopOfRouteData() {
-    const Bus = ['132', '133', '172', '9025'];
+    const _Bus = ['132', '133', '172', '9025'];
 
     let data = [...JSON.parse(await fs.readFileSync(path.resolve('./storage/bus/ust-bus-route.json')))];
 
-    for(let name of Bus) {
-      data.push(...(await this._getPtx({
+    for(let name of _Bus) {
+      data.push(...(await Bus._getPtx({
         url: `https://ptx.transportdata.tw/MOTC/v2/Bus/StopOfRoute/City/Taoyuan/${name}`,
         params: {
           $top: '1000',

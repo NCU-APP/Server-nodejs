@@ -28,6 +28,71 @@
     "name": ""
   },
   {
+    "type": "Estimate",
+    "url": "Estimate",
+    "title": "Estimate",
+    "group": "Types",
+    "version": "0.1.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "stopid",
+            "description": "<p>站牌ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "direction",
+            "description": "<p>去返程[0:'去程',1:'返程',2:'迴圈',255:'未知'].</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "array",
+            "optional": false,
+            "field": "estimates",
+            "description": "<p>到站時間預估 (若無爲 false) [{PlateNumb: string, IsLastBus: boolean, EstimateTime: integer}]</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "object",
+            "optional": false,
+            "field": "name",
+            "description": "<p>站牌名稱 {zh_tw: {string}, en: {string}}</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "time",
+            "optional": false,
+            "field": "nextTime",
+            "description": "<p>下一班公車到達時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "sequence",
+            "description": "<p>路線經過站牌之順序</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "number",
+            "optional": false,
+            "field": "status",
+            "description": "<p>車輛狀態備註 : [0:'正常',1:'尚未發車',2:'交管不停靠',3:'末班車已過',4:'今日未營運']</p>"
+          }
+        ]
+      }
+    },
+    "filename": "./routes/api/v1/bus.js",
+    "groupTitle": "Types",
+    "name": "EstimateEstimate"
+  },
+  {
     "type": "Route",
     "url": "Route",
     "title": "Route",
@@ -269,7 +334,64 @@
   },
   {
     "type": "GET",
-    "url": "/api/v1/traffic/bus/route",
+    "url": "/api/v1/traffic/bus/estimate/:busid",
+    "title": "EstimateTime",
+    "description": "<p>市區公車之預估到站資料</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "busid",
+            "defaultValue": "null",
+            "description": "<p>繁體中文路線名稱，如'132'</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Example",
+          "content": "{\n  \"busid\": 132\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "name": "EstimateTime",
+    "group": "traffic",
+    "version": "0.1.0",
+    "sampleRequest": [
+      {
+        "url": "/api/v1/traffic/estimate/0"
+      }
+    ],
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "boolean",
+            "optional": false,
+            "field": "result",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "array[<a href=\"#api-Types-EstimateEstimate\">Estimate</a>]",
+            "optional": false,
+            "field": "data",
+            "description": "<p>市區公車之預估到站資料</p>"
+          }
+        ]
+      }
+    },
+    "filename": "./routes/api/v1/bus.js",
+    "groupTitle": "traffic"
+  },
+  {
+    "type": "GET",
+    "url": "/api/v1/traffic/bus/route/:version",
     "title": "RouteList",
     "description": "<p>市區公車之路線站序資料</p>",
     "parameter": {
@@ -280,7 +402,7 @@
             "type": "int",
             "optional": false,
             "field": "version",
-            "defaultValue": "361",
+            "defaultValue": "null",
             "description": "<p>使用者的版本</p>"
           }
         ]
@@ -298,7 +420,7 @@
     "version": "0.1.0",
     "sampleRequest": [
       {
-        "url": "/api/v1/traffic/bus/route"
+        "url": "/api/v1/traffic/bus/route/0"
       }
     ],
     "success": {
