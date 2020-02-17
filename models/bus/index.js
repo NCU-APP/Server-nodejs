@@ -23,18 +23,20 @@ module.exports = class Bus {
       })).data, result = [];
 
     data.forEach(route => {
-      result.push({
-        direction: route.Direction,
-        estimates: (route.Estimates ? route.Estimates : false),
-        nextTime: route.NextBusTime,
-        name: {
-          zh_tw: route.StopName.Zh_tw,
-          en: route.StopName.En
-        },
-        stopid: route.StopUID,
-        sequence: route.StopSequence,
-        status: route.StopStatus
-      });
+      if(route.RouteName.En === name) {
+        result.push({
+          direction: route.Direction,
+          estimates: (route.Estimates ? route.Estimates : false),
+          nextTime: route.NextBusTime,
+          name: {
+            zh_tw: route.StopName.Zh_tw,
+            en: route.StopName.En
+          },
+          stopid: route.StopUID,
+          sequence: route.StopSequence,
+          status: route.StopStatus
+        });
+      }
     });
 
     return result;
